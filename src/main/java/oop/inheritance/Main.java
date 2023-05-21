@@ -1,11 +1,13 @@
 package oop.inheritance;
 
 import oop.inheritance.data.SupportedTerminal;
+import oop.inheritance.tpv.TpvDeviceFactory;
+import oop.inheritance.data.CommunicationType;
 
 public class Main {
 
     public static void main(String[] args) {
-        Application application = new Application(SupportedTerminal.INGENICO);
+        Application application = new Application(TpvDeviceFactory.getFactory(SupportedTerminal.INGENICO, CommunicationType.ETHERNET));
 
         while (true) {
             run(application);
